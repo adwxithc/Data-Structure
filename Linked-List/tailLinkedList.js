@@ -45,9 +45,8 @@ class LinkedList{
         let prev,start=0
         if(this.isEmpty()){
 
-            const node= new Node(arr[0])
-            this.head=node
-            prev=node
+            this.head=new Node(arr[0])
+            prev=this.head
             start=1
             this.size++
             

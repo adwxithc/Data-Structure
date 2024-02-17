@@ -12,10 +12,10 @@
         console.log(isPrime(12))
         console.log(isPrime(17))
 //O(n/2)t  O(1)s
-
+//factor of a number is less than its square root
         function isPrime2(n){
             if(n<2) return false
-            for( let i=2;i< Math.sqrt(n) ;i++ ){
+            for( let i=2;i<= Math.sqrt(n) ;i++ ){
                 if(n%i==0) return false
             }
             return true

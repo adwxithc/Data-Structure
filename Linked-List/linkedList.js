@@ -164,7 +164,7 @@ insertArray(arr){
         if(index<0 || index>=this.size){
             return -1
         }
-        let i=0,cur=this.head
+        let cur=this.head
         for(let i=0;i<index;i++){
             cur=cur.next
         }
@@ -185,13 +185,19 @@ insertArray(arr){
     //O(n)
 
     removeDuplicates(){
-        let cur= this.head
-        while(cur && cur.next){
-            if(cur.value==cur.next.value){
-                cur.next=cur.next.next
+        let cur=this.head,prev=null
+        const seen={}
+        while(cur){
+            if(seen[cur.value]){
+                prev.next=cur.next
+                this.size--
             }else{
-                cur=cur.next
+                seen[cur.value]=true
+                prev=cur
+                
             }
+            cur=cur.next
+            
         }
     }
 
