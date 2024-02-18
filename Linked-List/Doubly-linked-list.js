@@ -158,18 +158,29 @@ class DoublyLinkedList{
         console.log('invalid next node value')
     }
 
-    removeDuplicates(){
-        let cur= this.head
-        while(cur && cur.next){
-            if(cur.value==cur.next.value){
-                
-                cur.next=cur.next.next
-                cur.next.prev=cur
-            }else{
-                cur=cur.next
-            }
+    removeDuplicate(){
+        if(this.isEmpty()){
+            console.log('Empty');
+            return
         }
-        this.tail=cur
+        let cur=this.head
+        const seen={}
+        while(cur){
+            
+        if(seen[cur.value]){
+
+            cur.prev.next=cur.next
+            if(cur.next){
+                cur.next.prev=cur.prev
+            }else{
+                this.tail=cur.prev
+            }
+            this.size--
+        }else{
+            seen[cur.value]=true
+        }
+        cur=cur.next
+        }
     }
 
     mergeSort(head){
@@ -203,7 +214,7 @@ class DoublyLinkedList{
         }
 
         cur.next= left || right
-console.log('------------------',cur)
+// console.log('------------------',cur)
         return tempNode.next
 
     }
@@ -225,20 +236,20 @@ console.log('------------------',cur)
 }
 
 const list = new DoublyLinkedList()
-list.append(480)
-list.append(680)
-list.append(380)
-list.append(180)
-list.append(580)
-list.append(480)
-list.append(280)
+list.append(4)
+list.append(6)
+list.append(3)
+list.append(1)
+list.append(5)
+list.append(4)
+list.append(41)
 
-list.append(480)
+list.append(6)
 
 
 
 list.print()
-list.sort()
+list.removeDuplicate()
 list.print()
 
 
