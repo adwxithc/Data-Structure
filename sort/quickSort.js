@@ -31,7 +31,7 @@ function swap(arr,i,k){
 }
 
 
-console.log('10101010110'.split('1'))
+
 
 
 
