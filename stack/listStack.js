@@ -71,6 +71,19 @@ class Stack{
         }
         this.top= prev
     }
+
+    recReverse(top=this.top){
+
+        if(!top || !top.next){
+            this.top=top
+            return
+        }
+        this.recReverse(top.next)
+        top.next.next=top
+        top.next=null
+    }
+
+  
 }
 
 const stack1= new Stack()
@@ -80,7 +93,7 @@ stack1.push(30)
 
 stack1.print()
 
-stack1.reverse()
+stack1.recReverse()
 stack1.print()
 
 
