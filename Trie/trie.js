@@ -69,12 +69,13 @@ class Trie{
             return
         }
 
-            const char = word[i]
-            if(!node.children[char]){
-                return
-            }
-            this.deleteRecursively(node.children[char],word,i+1)
+        const char = word[i]
+        if(!node.children[char]){
+            return
+        }
         
+        this.deleteRecursively(node.children[char],word,i+1)
+
 
         if(Object.keys(node.children[char].children).length==0 && !node.children[char].isEnded){
             delete node.children[char]
