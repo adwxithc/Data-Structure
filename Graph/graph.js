@@ -11,10 +11,10 @@ class Graph{
 
     addEdjes(vertex1,vertex2){
         if(!this.adjucency[vertex1]){
-            this.addEdjes(vertex1)
+            this.addVertex(vertex1)
         }
         if(!this.adjucency[vertex2]){
-            this.addEdjes(vertex2)
+            this.addVertex(vertex2)
         }
         this.adjucency[vertex1].add(vertex2)
         this.adjucency[vertex2].add(vertex1)
@@ -57,5 +57,5 @@ g.addEdjes('A','C')
 
 g.display()
 g.removeVertex('A')
-console.log('---------------------------');
+
 g.display()

@@ -55,7 +55,7 @@ class Graph{
                 }
             }
         }
-        return result;  // O(v+e) T   O(v) S
+        return result;  // O(v+e) T   O(v)S
     }
     DFS(start){
         const stack = [start];
