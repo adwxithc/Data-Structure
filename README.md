@@ -1,4 +1,4 @@
-Here's a sample README.md for your GitHub repository to guide contributors on how to contribute to the problems:
+
 
 ---
 
@@ -84,4 +84,4 @@ Let's learn and grow together in the world of Data Structures and Algorithms! ðŸ
 
 ---
 
-Feel free to modify this README to better fit your repository's needs!
+
